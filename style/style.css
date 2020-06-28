@@ -1,0 +1,121 @@
+#searchButton {
+  color: green;
+}
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  width: 100%;
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.jumbotron {
+  background-color: #fbe9e7;
+}
+#Latitude {
+  background-color: #fffde7;
+}
+#introduction {
+  background-color: #fffde7;
+}
+#altitude {
+  background-color: #fffde7;
+}
+#summary {
+  background-color: #fffde7;
+}
+#test {
+  background-color: #fffde7;
+}
+#tinker {
+  text-align: center;
+  margin: auto;
+}
+#thinking {
+  text-align: center;
+  margin: auto;
+}
+#quiz1 {
+  text-align: center;
+  margin: auto;
+}
+#quiz2 {
+  text-align: center;
+  margin: auto;
+}
+#information {
+  text-align: center;
+  margin: auto;
+}
+#tinker2 {
+  text-align: center;
+  margin: auto;
+}
+#data {
+  margin: auto;
+}
+#data2 {
+  margin: auto;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+#foot {
+  text-align: right;
+}
+
+#preInfo {
+  margin-left: 15px;
+  text-align: left;
+  background-color: #f0f8ff;
+}
+
+#preInfo2 {
+  margin-left: 15px;
+  text-align: left;
+  background-color: #f0f8f0;
+}
+
+h3 {
+  text-align: center;
+}

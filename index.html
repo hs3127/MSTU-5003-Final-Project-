@@ -1,0 +1,365 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-8">
+          <h1 class="display-4">Early Geographers </h1>
+        </div>
+        <div class="col-4">
+          <img src="https://thumbs.dreamstime.com/b/cute-chibi-kawaii-characters-alphabet-professions-letter-g-geographer-flat-style-92341010.jpg" class="responsive" width="200" class="rounded float-right" alt="...">
+        </div>
+      </div>
+      <p class="lead"> A multimedia-resource platform that teaches younger students about people, places, processesand nurture truly global perspectives.</p>
+      <hr class="my-4">
+      <p>Children need to learn the beauty and intricacies of the natural world before they can save it. —David Sobel </p>
+    </div>
+
+    <div class="row">
+      <div class="col-2 col-xs-2">
+        <p>Category</p>
+      </div>
+      <div class="col-7 col-xs-12" id="buttonGroups1">
+        <button type="button" class="btn btn-primary"><span id="physical" onmouseover="highlightWord()" onmouseleave="unHighlightWord()">Physical</span></button>
+        <button type="button" class="btn btn-outline-secondary">Human</button>
+        <button type="button" class="btn btn-outline-success">Economic</button>
+        <button type="button" class="btn btn-outline-danger">Environmental</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 col-xs-2">
+        <p>Branch</p>
+      </div>
+      <div class="col-7 col-xs-12">
+        <button type="button" class="btn btn-outline-primary">Oceans</button>
+        <button type="button" class="btn btn-outline-secondary">Landforms</button>
+        <button type="button" class="btn btn-success"><span id="atmosphere" onmouseover="highlightWord()" onmouseleave="unHighlightWord">Atmosphere</span></button>
+        <button type="button" class="btn btn-outline-danger">Biological</button>
+      </div>
+
+      <div class="col-3 col-xs-12">
+
+        <form>
+          <div class="row">
+            <div class="col-8">
+              <input id="searchBar" class="form-control rounded-pill" type="text" placeholder="Search">
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn" onclick="searchResult()"><i class="fa fa-search" id="searchButton"></i></button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col" style="text-align:center">
+        <h3 id="introduction">The Secrets of Temperature</h3>
+        <p>Temperature is a measure of how hot or cold something is.The factors that affects temperature are altitude, latitude and distance from sea. The height measured from sea level is called altitude.latitude is a geographic coordinate that specifies the north–south position of a point on the Earth's surface. Today we are going to explore how altitude and latitude affect temperature on the earth.</p>
+      </div>
+    </div>
+
+    <hr>
+    <div id="Latitude" class="row">
+      <div class="col">
+        <h3 style="text-align:center">Latitude</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="tinker" class="col-4">
+        <strong>Tinker:</strong> Tinker with the range bar to drag the red star around the edge of the earth to change its latitude.Observe how the temperature varies with the latitude.
+      </div>
+      <div class="col-4">
+
+        <img src="https://assets.codepen.io/4545604/00000_1.png" class="responsive" alt="" width="300" height="200">
+        <p>Tinkering slider</p>
+
+        <!--Tinkering for Latitude-->
+        <div class="slidecontainer">
+
+          <input type="range" min="0" , max="90" class="slider" id="latitudeRange" oninput="changeLatitude()">
+        </div>
+      </div>
+
+      <!--Latitude and temperature change-->
+      <div id="data" class="col-4">
+        <form>
+          <div class="form-group ">
+            <label for="inputLatitude" class="col-sm-2 col-form-label">Latitude</label>
+            <div class="col-sm-10">
+              <input type="Latitude data" class="form-control" id="latitudeData">
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="inputTemperature" class="col-sm-2 col-form-label">Temperature</label>
+            <div class="col-sm-10">
+              <input type="temperature Data" class="form-control" id="temperatureData1">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div id="information" class="col-4">
+        <strong>Information cards:</strong> You may have noticed the temperature is the highest at 0 degrees latitude,and the lowerest at 90 degrees latitude. Check the information cards to learn about their special meanings.
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img id="equatorImg" src="https://www.therobotreport.com/wp-content/uploads/2019/12/Home-Background.jpg" width="300" height="150" class="card-img-top" alt="..." onmouseover="changeImage()" onmouseleave="backToOld()">
+          <div class="card-body">
+            <h5 class="card-title">Equator</h5>
+            <p class="card-text">Earth is warmer near the equator because the equator receives energy from the sun at a more direct angle than the rest of the planet.</p>
+            <a href="#" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img id="poleImg" src="https://ak.picdn.net/shutterstock/videos/1185370/thumb/1.jpg" width="300" height="150" class="card-img-top" alt="..." onmouseover="changePic()" onmouseleave="backToOriginal()">
+          <div class="card-body">
+            <h5 class="card-title">The North/South Pole</h5>
+            <p class="card-text">Both the Arctic (North Pole) and the Antarctic (South Pole) are 90 degrees latitude. They are very cold because they don't get any direct sunlight.</p>
+            <a href="#" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div id="altitude" class="col">
+        <h3 style="text-align:center">Altitude</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="tinker2" class="col-4">
+        <p> <strong>Tinker:</strong> Tinker with the range bar to drag the climber and move him up and down on the mountain, which will change the latitude he is located at. Observe how the temperature varies with the latitude. </p>
+      </div>
+      <div class="col-4">
+        <a href="#"> <img src="https://assets.codepen.io/4545604/999.PNG" alt="" class="responsive" width="200" height="200"></a>
+        <p>Tinkering slider（unit of length: meters）</p>
+
+        <!--Tinkering for altitude-->
+        <div class="slidecontainer">
+
+          <input type="range" min="0" , max="5000" class="slider" id="altitudeRange" oninput="changeAltitude()">
+        </div>
+      </div>
+      <!--change altitude and temperature-->
+      <div id="data2" class="col-4">
+
+        <form>
+          <div class="form-group ">
+            <label for="inputAltitude" class="col-sm-2 col-form-label">Altitude</label>
+            <div class="col-sm-10">
+              <input type="Altitude data" class="form-control" id="altitudeData">
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="inputTemperature" class="col-sm-2 col-form-label">Temperature</label>
+            <div class="col-sm-10">
+              <input type="temperature Data" class="form-control" id="temperatureData2">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div id="summary" class="col">
+        <h3 style="text-align:center">Summary Cards </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="thinking" class="col-4">
+        <p class="text-align:center"><strong>Thinking:</strong> What did you discover by tinkering around? How do latitude and altitude affect the temperature? Why do they affect temperature? Check the summary cards and they will uncover the secrets of your questions.</p>
+      </div>
+      <div class="col-4">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="https://assets.codepen.io/4545604/123.PNG" alt="Avatar" style="width:300px;height:200px;" class="responsive">
+            </div>
+            <div class="flip-card-back">
+              <h1>Latitude</h1>
+              <p>Description</p>
+              <p>Explanation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="flip-card ">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="responsive" src="https://assets.codepen.io/4545604/455.PNG" alt="Avatar" style="width:300px;height:200px;">
+            </div>
+            <div class="flip-card-back">
+              <h1>Altitude</h1>
+              <p>Description</p>
+              <p>Explanation</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div id="test" class="col">
+        <h3 style="text-align:center">
+          Quiz Time
+        </h3>
+      </div>
+    </div>
+
+    <div id="quiz1" class="row">
+      <div class="col-4 col-xs-12">
+        <p><strong>Quiz: </strong>Among the choices given to you, please choose a combination of latitude and altitude that has the lowerest temperature. </p>
+      </div>
+
+      <!--QUIZ FORM-->
+
+      <div class="col-8 col-xs-12 ">
+        <form>
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" onchange="updateEmail(event)">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="name" class="form-control" id="inputName" onchange="updateName()">
+            </div>
+          </div>
+          <div class="form-group row" id="Questions">
+            <div class="col-sm-2">Answer</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Latitude: 20 degrees north">
+                <label class="form-check-label" for="gridCheck1">
+                  Latitude：20 degrees north
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Latitude: 58 degrees north">
+                <label class="form-check-label" for="gridCheck1">
+                  Latitude: 58 degrees north
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Altitude: 300 meters high">
+                <label class="form-check-label" for="gridCheck1">
+                  Altitude: 300 meters high
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Altitude: 2000 meters high">
+                <label class="form-check-label" for="gridCheck1">
+                  Altitude: 2000 meters high
+                </label>
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary" onclick="printAnswer()">Print</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-danger" onclick="resetInfo()">Reset</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="submit" class="btn btn-success" onclick="submitMessage()">Submit</button>
+            </div>
+          </div>
+          <pre id="preInfo">Record:<br><br></pre>
+        </form>
+
+      </div>
+
+    </div>
+    <hr>
+
+    <div id="quiz2" class="row">
+      <div class="col-4 col-xs-12">
+        <p><strong>Quiz: </strong>Among the choices given to you, please choose the correct statements </p>
+      </div>
+
+      <!--QUIZ FORM-->
+
+      <div class="col-8 col-xs-12 ">
+        <form>
+
+          <div class="form-group row" id="Questions2">
+            <div class="col-sm-4"><strong>Which ones are the correct statements?</strong></div>
+            <div class="col-sm-8">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Temperatures are warmer approaching the Equator">
+                <label class="form-check-label" for="gridCheck1">
+                  Temperatures are warmer approaching the Equator
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Temperature decreases as altitude increases">
+                <label class="form-check-label" for="gridCheck1">
+                  Temperature decreases as altitude increases
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="Equatorial regions have little seasonal variation">
+                <label class="form-check-label" for="gridCheck1">
+                  Equatorial regions have little seasonal variation
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1" value="The latitude of North Pole is 0 degrees">
+                <label class="form-check-label" for="gridCheck1">
+                  The latitude of North Pole is 0 degrees
+                </label>
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary" onclick="getSecondCheckBoxAnswer(event)">Check</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-danger" onclick="resetSecondInfo(event)">Reset</button>
+            </div>
+          </div>
+          <pre id="preInfo2">Record:<br><br></pre>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
